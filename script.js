@@ -1,5 +1,6 @@
 let firstCard = Math.floor(Math.random() * (12 - 2) + 2)
 let secondCard = Math.floor(Math.random() * (12 - 2) + 2)
+
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 
@@ -23,14 +24,20 @@ function renderGame() {
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
+        messageEl.textContent = message
     } else if (sum === 21) {
         message = "You've got Blackjack!"
+        messageEl.textContent = message
         hasBlackJack = true
+        resetEl.style.opacity = 1
+        resetEl.style.visibility = visible
     } else {
         message = "You're out of the game!"
+        messageEl.textContent = message
         isAlive = false
+        resetEl.style.opacity = 1
+        resetEl.style.visibility = visible
     }
-    messageEl.textContent = message
 }
 
 
@@ -41,14 +48,10 @@ function newCard() {
      }
      else if (!isAlive) {
          messageEl.textContent = message
-         resetEl.style.opacity = 1
-         resetEl.style.visibility = visible
          return
      }
      else if (hasBlackJack) {
          messageEl.textContent = message
-         resetEl.style.opacity = 1
-         resetEl.style.visibility = visible
          return
      }
     let card = Math.floor(Math.random() * (12 - 2) + 2)
@@ -57,4 +60,6 @@ function newCard() {
     renderGame()
  }
 
- function reset
+ function resetGame () {
+
+ }

@@ -15,11 +15,6 @@ h1 {
     font-style: italic;
 }
 
-#reset-btn {
-    opacity: 0;
-    visibility: visible;
-}
-
 button {
     color: #016f32;
     cursor: pointer;
@@ -31,4 +26,9 @@ button {
     border: none;
     border-radius: 2px;
     margin: 3px 0px;
+}
+
+#reset-btn {
+    opacity: 0;
+    visibility: hidden;
 }
